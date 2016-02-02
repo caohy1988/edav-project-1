@@ -43,4 +43,4 @@ for (i in 1:dim(data)[1]){
 # Remove column hosting set of tools
 data <-data[,!(colnames(data) %in% 'Experiences.with.tools')]
 
-write.csv(data, "survey_new.csv")
+write.csv(data, "survey_new.csv",row.names = FALSE)
