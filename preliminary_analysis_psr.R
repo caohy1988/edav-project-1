@@ -1,6 +1,6 @@
 library(ggplot2)
 
-data <- read.csv('survey_new.csv')
+data <- read.csv('data/survey_new.csv')
 
 # Question, who is in the class? How familiar are they with R?
 

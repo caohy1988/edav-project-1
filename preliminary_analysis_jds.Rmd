@@ -1,0 +1,32 @@
+---
+title: "preliminary_analysis_jds"
+author: "Joshua Safyan"
+date: "February 2, 2016"
+output: html_document
+---
+An example of using Patrick's code in an R-markdown document.
+First, read in the data and invoke ggplot2:
+```{r}
+library(ggplot2)
+data <- read.csv('data/survey_new.csv')
+```
+
+###Question:
+Who is in the class? How familiar are they with R?
+```{r}
+ggplot(data, aes(data$Program, fill = data$R)) + geom_bar() +
+  xlab('Program') + ylab('Count') + labs(fill = "Proficient with R") +
+  ggtitle("R Programming Proficiency by Program") +
+  theme(plot.title = element_text(size = 16))
+```
+
+###Question:
+Are there differences in the number of tools used by DSI MS students,
+DSI Certificate students, and everyone else. Look at mean and standard deviation.
+```{r}
+ggplot(data, aes(x = data$Program, y = data$Number.Tools)) + geom_boxplot(fill = "#b0c5e6") +
+  xlab('Program') + ylab('# Analysis Tools') + 
+  ggtitle("Average Number of Analysis Tools by Program") + 
+  theme(plot.title = element_text(size = 16)) 
+```
+
